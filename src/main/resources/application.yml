@@ -1,0 +1,11 @@
+spring:
+  datasource: # ShardingSphere ????? ShardingSphere 5.3.0 Release ??? Spring ?????????,??????ShardingSphereDriver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.12.24:23306/test?useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: Comen_2020
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: false
