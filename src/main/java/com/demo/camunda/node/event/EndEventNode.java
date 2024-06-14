@@ -13,12 +13,11 @@ public class EndEventNode extends BaseNode {
     public AbstractFlowNodeBuilder<?, ?> createFlowNode(AbstractFlowNodeBuilder<?, ?> preFlow, BaseNode node, BpmContext context) {
         Collection<EndEvent> modelElementsByType = preFlow.getElement().getModelInstance().getModelElementsByType(EndEvent.class);
         if (modelElementsByType.isEmpty()) {
-            preFlow.endEvent();
+            return preFlow.endEvent();
         } else {//如果已经存在end节点,则讲该节点连接到 end节点，避免出现多个end节点
             EndEvent endEvent = (EndEvent) modelElementsByType.toArray()[0];
-            preFlow.connectTo(endEvent.getId());
+            return preFlow.connectTo(endEvent.getId());
         }
-        return null;
     }
 
     @Override
